@@ -17,7 +17,7 @@ import React from 'React';
 import ReactComponentWithPureRenderMixin from 'ReactComponentWithPureRenderMixin';
 import ReactWheelHandler from 'ReactWheelHandler';
 import ReactTouchHandler from 'ReactTouchHandler';
-import Scrollbar from 'Scrollbar';
+import { Scrollbar, SCROLLBAR_SIZE } from 'Scrollbar';
 import FixedDataTableBufferedRows from 'FixedDataTableBufferedRows';
 import FixedDataTableColumnResizeHandle from 'FixedDataTableColumnResizeHandle';
 import FixedDataTableRow from 'FixedDataTableRow';
@@ -489,7 +489,7 @@ var FixedDataTable = React.createClass({
     var maxScrollY = this.state.maxScrollY;
     var showScrollbarX = state.maxScrollX > 0 && state.overflowX !== 'hidden' && state.showScrollbarX !== false;
     var showScrollbarY = maxScrollY > 0 && state.overflowY !== 'hidden' && state.showScrollbarY !== false;
-    var scrollbarXHeight = showScrollbarX ? Scrollbar.SIZE : 0;
+    var scrollbarXHeight = showScrollbarX ? SCROLLBAR_SIZE : 0;
     var scrollbarYHeight = state.height - scrollbarXHeight -
         (2 * BORDER_HEIGHT) - state.footerHeight;
 
@@ -1026,9 +1026,9 @@ var FixedDataTable = React.createClass({
       props.overflowX !== 'hidden' && props.showScrollbarX !== false;
 
     if (horizontalScrollbarVisible) {
-      bodyHeight -= Scrollbar.SIZE;
-      totalHeightNeeded += Scrollbar.SIZE;
-      totalHeightReserved += Scrollbar.SIZE;
+      bodyHeight -= SCROLLBAR_SIZE;
+      totalHeightNeeded += SCROLLBAR_SIZE;
+      totalHeightReserved += SCROLLBAR_SIZE;
     }
 
     var maxScrollX = Math.max(0, scrollContentWidth - props.width);
@@ -1221,11 +1221,11 @@ var HorizontalScrollbar = React.createClass({
 
   render() /*object*/ {
     var outerContainerStyle = {
-      height: Scrollbar.SIZE,
+      height: SCROLLBAR_SIZE,
       width: this.props.size,
     };
     var innerContainerStyle = {
-      height: Scrollbar.SIZE,
+      height: SCROLLBAR_SIZE,
       position: 'absolute',
       overflow: 'hidden',
       width: this.props.size,
