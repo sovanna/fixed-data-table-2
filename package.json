@@ -34,6 +34,7 @@
     "postcss": "^4.0.2",
     "postcss-custom-properties": "3.0.1",
     "react": "^15.2.1",
+    "react-addons-shallow-compare": "^15.3.0",
     "react-addons-test-utils": "^15.2.1",
     "react-docgen": "^1.2.0",
     "react-tools": "^0.12.2",
